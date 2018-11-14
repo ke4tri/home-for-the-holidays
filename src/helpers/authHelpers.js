@@ -9,17 +9,17 @@ const checkLoginStatus = () => {
       $('#holidays').show();
       $('#auth').hide();
       $('#navbar-button-auth').hide();
-      $('#navbar-button-holiday').show();
+      $('#navbar-button-holidays').show();
       $('#navbar-button-friends').show();
-      ('#navbar-button-logout').show();
+      $('#navbar-button-logout').show();
     } else {
       $('#friends').hide();
       $('#holidays').hide();
       $('#auth').show();
       $('#navbar-button-auth').show();
-      $('#navbar-button-holiday').hide();
+      $('#navbar-button-holidays').hide();
       $('#navbar-button-friends').hide();
-      ('#navbar-button-logout').hide();
+      $('#navbar-button-logout').hide();
     }
   });
 };

@@ -13,7 +13,7 @@ const navbarEvents = () => {
         $('#friends').hide();
         $('#holidays').hide();
       }).catch((err) => {
-        console.error('you still lodded in', err);
+        console.error('you still logged in', err);
       });
     } else if (e.target.id === 'navbar-button-holidays') {
       $('#auth').hide();
