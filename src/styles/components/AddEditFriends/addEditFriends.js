@@ -90,7 +90,7 @@ const showEditForm = (e) => {
 const updateFriend = (e) => {
   const updatedFriend = gettingFriendFromForm();
   const friendId = e.target.dataset.singleEditId;
-  friendsData.addNewFriend(updatedFriend, friendId)
+  friendsData.updateFriend(updatedFriend, friendId)
     .then(() => {
       $('#add-edit-friend').html('').hide();
       $('#single-container').html('');
