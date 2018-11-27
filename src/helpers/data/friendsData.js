@@ -10,7 +10,7 @@ const getAllFriends = uid => new Promise((resolve, reject) => {
       const friendsArray = [];
       if (friendsObject !== null) {
         Object.keys(friendsObject).forEach((friendId) => {
-          friendsObject[friendId].id = friendId; // assigning a new id to the friend object
+          friendsObject[friendId].id = friendId;
           friendsArray.push(friendsObject[friendId]);
         });
       }
@@ -35,9 +35,11 @@ const getSingleFriend = friendId => new Promise((resolve, reject) => {
 
 const deleteFriend = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
 
-const addNewFriend = friendsObject => axios.post(`${firebaseUrl}/friends.json`, JSON.stringify(friendsObject));
+const addNewFriend = friendObject => axios.post(`${firebaseUrl}/friends.json`, JSON.stringify(friendObject));
 
-const updateFriend = (friendsObject, friendId) => axios.put(`${firebaseUrl}/friends/${friendId}.json`, JSON.stringify(friendsObject));
+const updateFriend = (friendObject, friendId) => axios.put(`${firebaseUrl}/friends/${friendId}.json`, JSON.stringify(friendObject));
+
+const updatedIsAvoiding = (friendId, isAvoiding) => axios.patch(`${firebaseUrl}/friends/${friendId}.json`, { isAvoiding });
 
 export default {
   getAllFriends,
@@ -45,10 +47,5 @@ export default {
   deleteFriend,
   addNewFriend,
   updateFriend,
+  updatedIsAvoiding,
 };
-
-
-// button runds the addNewFriends()
-// addNewFriends()  constructs next
-// from gettingFriendFromForm() setting == to newFriend
-// passing that through friendsData.addNewFriend(newFriend)

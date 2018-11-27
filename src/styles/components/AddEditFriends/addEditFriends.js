@@ -7,26 +7,25 @@ const formBuilder = (friend) => {
   const form = `
   <div class="form-group">
     <label for="form-friend-name">Name:</label>
-    <input type="text" class="form-control" value="${friend.name}" id="form-friend-name"  placeholder="John Smith">
+    <input type="text" class="form-control" value="${friend.name}" id="form-friend-name" placeholder="John Smith">
   </div>
   <div class="form-group">
     <label for="form-friend-address">Address:</label>
-    <input type="text" class="form-control" value="${friend.address}" id="form-friend-address" placeholder="Hell">
+    <input type="text" class="form-control" value="${friend.address}" id="form-friend-address" placeholder="500 Interstate Blvd S">
   </div>
   <div class="form-group">
     <label for="form-friend-email">Email:</label>
-    <input type="text" class="form-control" value="${friend.email}" id="form-friend-email" placeholder="fake@gmail.com">
+    <input type="email" class="form-control" value="${friend.email}" id="form-friend-email" placeholder="fake@person.com">
   </div>
   <div class="form-group">
     <label for="form-friend-phone">Phone Number:</label>
-    <input type="text" class="form-control" value="${friend.phoneNumber}" id="form-friend-phone" placeholder="123-123-1234">
+    <input type="text" class="form-control" value="${friend.phoneNumber}" id="form-friend-phone" placeholder="555-867-5309">
   </div>
   <div class="form-group">
     <label for="form-friend-relationship">Relationship:</label>
-eslint-disable-next-line max-len
-    <input type="text" class="form-control" id="form-friend-relationship" placeholder="I don't know them">
+    <input type="text" class="form-control" value="${friend.relationship}" id="form-friend-relationship" placeholder="I don't know, it's weird.">
   </div>
-`;
+  `;
   return form;
 };
 
@@ -36,7 +35,7 @@ const gettingFriendFromForm = () => {
     address: $('#form-friend-address').val(),
     email: $('#form-friend-email').val(),
     relationship: $('#form-friend-relationship').val(),
-    phoneNumber: $('#form-friend-name').val(),
+    phoneNumber: $('#form-friend-phone').val(),
     isAvoiding: false,
     uid: authHelpers.getCurrentUid(),
   };
@@ -51,6 +50,7 @@ const buildAddForm = () => {
     email: '',
     relationship: '',
   };
+
   let domString = '<h2>Add New Friend</h2>';
   domString += formBuilder(emptyFriend);
   domString += '<button id="add-friend">Save New Friend</button>';
@@ -101,6 +101,7 @@ const updateFriend = (e) => {
       console.error('error', error);
     });
 };
+
 
 $('body').on('click', '#add-friend', addNewFriend);
 $('body').on('click', '.edit-btn', showEditForm);
