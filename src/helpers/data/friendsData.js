@@ -46,3 +46,9 @@ export default {
   addNewFriend,
   updateFriend,
 };
+
+
+// button runds the addNewFriends()
+// addNewFriends()  constructs next
+// from gettingFriendFromForm() setting == to newFriend
+// passing that through friendsData.addNewFriend(newFriend)
