@@ -3,9 +3,9 @@
 ### Description
 This project creates an app that organizes the holiday parties one would have throughout the year with the friends who are invided.
 
-![login]()
-![friend]()
-![edit]()
+![login](https://github.com/ke4tri/home-for-the-holidays/blob/master/src/img/HomeLogin.JPG?raw=true)
+![friend](https://github.com/ke4tri/home-for-the-holidays/blob/master/src/img/HomeFriends.JPG?raw=true)
+![edit](https://github.com/ke4tri/home-for-the-holidays/blob/master/src/img/HomeEdit.JPG?raw=true)
 
 ### Technologies Used
 * SASS
